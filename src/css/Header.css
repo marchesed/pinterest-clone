@@ -1,0 +1,21 @@
+.header-container{
+    border-bottom: 2px solid gray;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    background: white;
+}
+.header-logo{
+    width: 20%;
+    padding: 10px;
+}
+.header-signin{
+    right: 0;
+    position: absolute;
+    padding: 15px;
+    height: 100%;
+    border: none;
+}
+.header-signin:hover{
+    background: grey;
+}

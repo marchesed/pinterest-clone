@@ -1,0 +1,22 @@
+.img-container{
+    flex: 1 1 auto;
+}
+.img{
+    padding: 10px;
+    border-radius: 30px;
+}
+.img:hover{
+    opacity: .9;
+    transition: ease-in 0.1s;
+}
+.btn{
+    display: none;
+    position: absolute;
+    transform: translate(-100px, 20px);
+    background: red;
+    color: white;
+}
+
+img:hover + .btn, .btn:hover {
+    display: inline-block;
+}
