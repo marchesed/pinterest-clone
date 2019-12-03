@@ -2,11 +2,14 @@ import React from "react";
 import Header from "./Header";
 import axios from "axios";
 import AllImages from './AllImages'
+import '../css/Profile.css'
+import Button from "./Button";
+
 class Profile extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      isSignedIn: document.cookie.indexOf("github-auth=") !== 1,
+      isSignedIn: document.cookie.indexOf("github-auth=") !== -1,
       images: []
     };
     if (this.state.isSignedIn) {
@@ -54,7 +57,15 @@ class Profile extends React.Component {
     }
   }
   handleSaveClick(id){
-   
+    axios.post(`/api/linkImage`,{
+        "githubId": this.state.githubId,
+        "pictureId": id,
+        "link": false
+      })
+      .then(res => {
+        console.log('remove link image',res)
+        window.location.reload();
+      })
   }
 
 
@@ -67,9 +78,13 @@ class Profile extends React.Component {
           isSignedIn={this.state.isSignedIn}
           name={this.state.name}
         />
+        <div className="header-row">
+            Click here to <Button link="/" copy="See All Images"/>
+            <h1 className="header-text">Hello and welcome to your profile page</h1><br />
+            <h2 className="header-subtext">look below for all of your saved images!</h2>
+        </div>
         <div className="row image-row">
-            <h1>Hello and welcome to your profile page</h1>
-          <AllImages  handleClick={this.handleSaveClick} imageData={this.state.images} />
+            <AllImages  handleClick={this.handleSaveClick} imageData={this.state.images} />
         </div>
       </div>
     );

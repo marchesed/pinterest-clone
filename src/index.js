@@ -5,7 +5,7 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import Profile from './components/Profile';
-import { Route, Link, BrowserRouter as Router } from 'react-router-dom'
+import { Route, BrowserRouter as Router } from 'react-router-dom'
 
 
 const client = new ApolloClient({

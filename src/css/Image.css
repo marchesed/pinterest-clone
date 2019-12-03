@@ -9,14 +9,25 @@
     opacity: .9;
     transition: ease-in 0.1s;
 }
-.btn{
+.btn-container{
     display: none;
-    position: absolute;
-    transform: translate(-100px, 20px);
+    /* position: absolute;
+    transform: translate(-100px, 20px); */
     background: red;
     color: white;
 }
-
-img:hover + .btn, .btn:hover {
+.share{
+    background: red;
+    color: white;
+    position: absolute;
+    transform: translate(-100px, 95px);
+}
+.save{
+    background: red;
+    color: white;
+    position: absolute;
+    transform: translate(-100px, -135px);
+}
+img:hover + .btn-container, .btn-container:hover {
     display: inline-block;
 }
