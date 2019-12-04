@@ -87,7 +87,7 @@ class App extends React.Component{
   }
 
   showButton(){
-    return this.state.isSignedIn ? <div className="button-padding">Click here to go to your <Button link="/profile" copy="profile" /></div> : ''
+    return this.state.isSignedIn ? <div className="button-padding">Click here to go to your <Button link="/profile" copy="profile" /></div> : <div className="button-padding">Click here to see the  <Button link="/users" copy="user list" /></div>
   }
 
   render(){

@@ -5,7 +5,9 @@ import { ApolloProvider } from '@apollo/react-hooks';
 import App from './components/App';
 import * as serviceWorker from './serviceWorker';
 import Profile from './components/Profile';
+import Users from './components/Users';
 import { Route, BrowserRouter as Router } from 'react-router-dom'
+import UserPage from './components/UserPage';
 
 
 const client = new ApolloClient({
@@ -18,6 +20,8 @@ ReactDOM.render(
         <div>
             <Route exact path="/" component={App} />
             <Route path="/profile" component={Profile} />
+            <Route path="/users" component={Users} />
+            <Route path="/userprofile" component={UserPage} />
         </div>
     </Router>
     </ApolloProvider>,

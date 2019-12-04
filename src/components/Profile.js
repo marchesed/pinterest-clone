@@ -28,6 +28,7 @@ class Profile extends React.Component {
               axios
                 .post(`/api/createUser`, {
                   githubId: this.state.githubId,
+                  name: this.state.name,
                   pictures: []
                 })
                 .then(res => {
@@ -43,6 +44,9 @@ class Profile extends React.Component {
             }
           });
         });
+    }
+    else{
+        window.location.href = '/'
     }
     this.handleSignIn = this.handleSignIn.bind(this);
     this.handleSaveClick = this.handleSaveClick.bind(this);
